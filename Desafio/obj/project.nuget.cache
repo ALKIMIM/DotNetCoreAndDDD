@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vHZN6mcwkf/ntnWXeAnaURB3nlmgnngEyprW87ArFej+SStctPqrlvydTgF7ub7wMgdUNZrxwhhcg50lWu50Pw==",
+  "dgSpecHash": "gWQ10UUDSYVD2+8bclb4XfdDGzdnTH/Y1OeUkQzTuCBmjYS3HD4ZRf/eZci+mhQiYVdtJrxknCdELnqg9kdvMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\Application.csproj",
+  "projectFilePath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samuel.chaves\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\samuel.chaves\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

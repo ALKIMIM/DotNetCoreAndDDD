@@ -41,7 +41,7 @@ namespace Application.Service
 
         public IEnumerable<ProviderModel> ListProvider()
         {
-            var list = _provider.GetProviders("");
+            var list = _provider.GetProvider("");
             List<ProviderModel> providers = new List<ProviderModel>();
 
             foreach (var item in list)

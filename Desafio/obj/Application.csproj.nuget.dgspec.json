@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\Application.csproj": {}
+    "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\Application.csproj": {
+    "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\Application.csproj",
+        "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\Application.csproj",
         "packagesPath": "C:\\Users\\samuel.chaves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Desafio\\obj\\",
+        "outputPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Desafio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samuel.chaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj"
+              "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj"
+              "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj": {
+    "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\samuel.chaves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samuel.chaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,14 +154,14 @@
         }
       }
     },
-    "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj": {
+    "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\samuel.chaves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samuel.chaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -178,8 +178,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Domain\\Domain.csproj"
+              "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Domain\\Domain.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pgdGZ7Jw+2QmByl1V6IRkGXcPESyTNrjXna/fWKOdCJB790p4U47oxRy8bM3CPwlBCaKxZknJ1eNBUHyuD+C1g==",
+  "dgSpecHash": "NCtf5WzJJmkyVFZHHVAZ2Yq8Xaen78ce6C87o22qMqtNDtmsvZag02MTi1RDxWcF1TXt3VEnSzAWFBRrsEejFA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samuel.chaves\\source\\repos\\Desafio\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\samuel.chaves\\repos\\DotNetCoreAndDDD\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samuel.chaves\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.17\\microsoft.entityframeworkcore.5.0.17.nupkg.sha512",
     "C:\\Users\\samuel.chaves\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.17\\microsoft.entityframeworkcore.abstractions.5.0.17.nupkg.sha512",
