@@ -14,6 +14,13 @@ namespace Repository.Entities
     {
         public ProductRepository(ApplicationDbContext dbContext) : base(dbContext) { }
 
-
+        public override IEnumerable<Product> Read()
+        {
+            return _dbSet.Include(x => x.Provider).AsNoTracking().ToList();
+        }
+        public override Product Read(int id)
+        {
+            return _dbSet.Include(x => x.Provider).Where(w => w.Id == id).FirstOrDefault();
+        }
     }
 }

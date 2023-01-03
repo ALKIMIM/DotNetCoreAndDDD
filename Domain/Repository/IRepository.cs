@@ -9,7 +9,7 @@ namespace Domain.Repository
     public interface IRepository<TEntity> where TEntity : class
     {
         void Create(TEntity Entity);
-        IEnumerable<TEntity> Read(int id);
+        TEntity Read(int id);
         void Delete(int id);
         IEnumerable<TEntity> Read();
     }

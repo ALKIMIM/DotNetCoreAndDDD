@@ -14,5 +14,6 @@ namespace Desafio.Domain.Entities
         public DateTime ExpirationDate { get; set; }
         [ForeignKey("Provider")]
         public int ProviderId { get; set; }
+        public Provider Provider { get; set; }
     }
 }

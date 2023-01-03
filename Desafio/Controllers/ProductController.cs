@@ -18,7 +18,7 @@ namespace Desafio.Controllers
     {
         private IServiceApplicationProduct _serviceApplicationProduct;
 
-        public ProductController(ApplicationDbContext context, IServiceApplicationProduct serviceApplicationProduct)
+        public ProductController(IServiceApplicationProduct serviceApplicationProduct)
         {
             _serviceApplicationProduct = serviceApplicationProduct;
         }

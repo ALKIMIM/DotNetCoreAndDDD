@@ -24,7 +24,7 @@ namespace Domain.Services
 
         public Provider GetProvider(int id)
         {
-            return _repositoryProvider.Read(id).FirstOrDefault();
+            return _repositoryProvider.Read(id);
         }
 
         public IEnumerable<Provider> GetProvider(string filter)

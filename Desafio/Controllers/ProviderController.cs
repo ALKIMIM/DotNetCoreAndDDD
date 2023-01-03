@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Desafio.Data;
 using Desafio.Domain.Entities;
+using Application.Model;
+using Application.Service.Interfaces;
 
 namespace Desafio.Controllers
 {
@@ -14,95 +16,53 @@ namespace Desafio.Controllers
     [ApiController]
     public class ProviderController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private IServiceApplicationProvider _serviceApplicationProvider;
 
-        public ProviderController(ApplicationDbContext context)
+        public ProviderController(IServiceApplicationProvider serviceApplicationProvider)
         {
-            _context = context;
+            _serviceApplicationProvider = serviceApplicationProvider;
         }
 
         // GET: api/Provider
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Provider>>> GetProviders()
+        public ActionResult GetProvider()
         {
-            return await _context.Provider.ToListAsync();
+            return Ok(_serviceApplicationProvider.ListProvider());
         }
+
 
         // GET: api/Provider/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Provider>> GetProvider(int id)
+        public ActionResult GetProvider(int id)
         {
-            var provider = await _context.Provider.FindAsync(id);
-
-            if (provider == null)
-            {
-                return NotFound();
-            }
-
-            return provider;
+            return Ok(_serviceApplicationProvider.GetProvider(id));
         }
 
         // PUT: api/Provider/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProvider(int id, Provider provider)
+        public ActionResult PutProvider(ProviderModel providerModel)
         {
-            if (id != provider.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(provider).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProviderExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _serviceApplicationProvider.PutProvider(providerModel);
+            return Ok();
         }
 
         // POST: api/Provider
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Provider>> PostProvider(Provider provider)
+        public ActionResult PostProvider(ProviderModel providerModel)
         {
-            _context.Provider.Add(provider);
-            await _context.SaveChangesAsync();
+            _serviceApplicationProvider.PostProvider(providerModel);
 
-            return CreatedAtAction("GetProvider", new { id = provider.Id }, provider);
+            return Ok();
         }
 
         // DELETE: api/Provider/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProvider(int id)
+        public ActionResult DeleteProvider(int id)
         {
-            var provider = await _context.Provider.FindAsync(id);
-            if (provider == null)
-            {
-                return NotFound();
-            }
-
-            _context.Provider.Remove(provider);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool ProviderExists(int id)
-        {
-            return _context.Provider.Any(e => e.Id == id);
+            _serviceApplicationProvider.DeleteProvider(id);
+            return Ok();
         }
     }
 }

@@ -10,8 +10,8 @@ namespace Repository
 {
     public abstract class Repository<TEntity> : DbContext, IRepository<TEntity> where TEntity : EntityBase, new()
     {
-        DbContext _dbContext;
-        DbSet<TEntity> _dbSet;
+        protected DbContext _dbContext;
+        protected DbSet<TEntity> _dbSet;
 
         public Repository(DbContext dbContext)
         {
@@ -39,12 +39,12 @@ namespace Repository
             _dbContext.SaveChanges();
         }
 
-        public IEnumerable<TEntity> Read(int id)
+        public virtual TEntity Read(int id)
         {
-            return _dbSet.Where(w => w.Id == id);
+            return _dbSet.Where(w => w.Id == id).FirstOrDefault();
         }
 
-        public IEnumerable<TEntity> Read()
+        public virtual IEnumerable<TEntity> Read()
         {
             return _dbSet.AsNoTracking();
         }

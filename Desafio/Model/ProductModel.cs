@@ -20,6 +20,6 @@ namespace Application.Model
         [Required(ErrorMessage = "Informe a data de validade do produto")]
         public DateTime ExpirationDate { get; set; }
 
-        public int ProviderId { get; set; }
+        public ProviderModel Provider { get; set; }
     }
 }

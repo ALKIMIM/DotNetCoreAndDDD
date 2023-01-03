@@ -48,12 +48,15 @@ namespace Desafio
 
             // Application Service
             services.AddScoped<IServiceApplicationProduct, ServiceApplicationProduct>();
+            services.AddScoped<IServiceApplicationProvider, ServiceApplicationProvider>();
             
             // Domain
             services.AddScoped<IProduct, ProductService>();
+            services.AddScoped<IProvider, ProviderService>();
 
             // Repository
             services.AddScoped<IRepositoryProduct, ProductRepository>();
+            services.AddScoped<IRepositoryProvider, ProviderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

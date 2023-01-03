@@ -9,5 +9,7 @@ namespace Domain.Repository
 {
     public interface IRepositoryProduct : IRepository<Product>
     {
+        new IEnumerable<Product> Read();
+        new public Product Read(int id);
     }
 }

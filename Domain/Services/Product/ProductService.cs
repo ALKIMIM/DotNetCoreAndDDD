@@ -24,7 +24,7 @@ namespace Domain.Services
 
         public Product GetProduct(int id)
         {
-            return _repositoryProduct.Read(id).FirstOrDefault();
+            return _repositoryProduct.Read(id);
         }
 
         public IEnumerable<Product> GetProducts(string filter)

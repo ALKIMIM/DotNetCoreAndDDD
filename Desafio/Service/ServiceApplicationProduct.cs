@@ -36,7 +36,12 @@ namespace Application.Service
                 ExpirationDate = product.ExpirationDate,
                 ManufacturingDate = product.ManufacturingDate,
                 ProductState = product.ProductState,
-                ProviderId = product.ProviderId
+                Provider = new ProviderModel
+                {
+                    Id = product.Provider.Id,
+                    Description = product.Provider.Description,
+                    CNPJ = product.Provider.CNPJ
+                }
             };
 
             return model;
@@ -56,7 +61,12 @@ namespace Application.Service
                     ExpirationDate = item.ExpirationDate,
                     ManufacturingDate = item.ManufacturingDate,
                     ProductState = item.ProductState,
-                    ProviderId = item.ProviderId
+                    Provider = new ProviderModel
+                    {
+                        Id = item.Provider.Id,
+                        Description = item.Provider.Description,
+                        CNPJ = item.Provider.CNPJ
+                    }
                 };
                 products.Add(productModel);
             }
@@ -72,7 +82,7 @@ namespace Application.Service
                 ExpirationDate = productModel.ExpirationDate,
                 ManufacturingDate = productModel.ManufacturingDate,
                 ProductState = productModel.ProductState,
-                ProviderId = productModel.ProviderId
+                ProviderId = productModel.Provider.Id
             };
             _product.CreateProduct(product);
         }
@@ -86,7 +96,7 @@ namespace Application.Service
                 ExpirationDate = productModel.ExpirationDate,
                 ManufacturingDate = productModel.ManufacturingDate,
                 ProductState = productModel.ProductState,
-                ProviderId = productModel.ProviderId
+                ProviderId = productModel.Provider.Id
             };
             _product.CreateProduct(product);
         }
