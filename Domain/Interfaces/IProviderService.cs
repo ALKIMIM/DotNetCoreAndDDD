@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IProvider
+    public interface IProviderService
     {
-        IEnumerable<Provider> GetProvider(string filter);
+        IEnumerable<Provider> GetProvider();
         Provider GetProvider(int id);
         void CreateProvider(Provider provider);
         void DeleteProvider(int id);

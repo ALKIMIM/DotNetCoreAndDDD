@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ namespace Desafio.Domain.Entities
     public class Product : EntityBase
     {
         public string Description { get; set; }
-        public bool ProductState { get; set; }
+        public ProductStateEnum ProductState { get; set; }
         public DateTime ManufacturingDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         [ForeignKey("Provider")]

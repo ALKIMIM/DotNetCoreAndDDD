@@ -9,6 +9,7 @@ using Desafio.Domain.Entities;
 using Desafio.Data;
 using Application.Service.Interfaces;
 using Application.Model;
+using Domain.Enums;
 
 namespace Desafio.Controllers
 {
@@ -24,18 +25,26 @@ namespace Desafio.Controllers
         }
 
         // GET: api/Product
-        [HttpGet]
-        public ActionResult GetProducts()
+        [HttpGet(template: "productState{productStateEnum}/totalRows/{totalRows}/pageNumber/{pageNumber}/filter{filter}")]
+        public ActionResult GetProductsWithPaginator(ProductStateEnum productStateEnum, int totalRows = 10, int pageNumber = 1, string filter = "")
         {
-            return Ok(_serviceApplicationProduct.ListProduct());
+            return Ok(_serviceApplicationProduct.ListPaginateProducts(productStateEnum, totalRows, pageNumber, filter));
+        }
+
+
+        // GET: api/Product
+        [HttpGet("{productStateEnum}")]
+        public ActionResult GetProducts(ProductStateEnum productStateEnum)
+        {
+            return Ok(_serviceApplicationProduct.ListProduct(productStateEnum));
         }
 
 
         // GET: api/Product/5
-        [HttpGet("{id}")]
-        public ActionResult GetProduct(int id)
+        [HttpGet("{productStateEnum}/{id}")]
+        public ActionResult GetProduct(ProductStateEnum productStateEnum, int id)
         {
-            return Ok(_serviceApplicationProduct.GetProduct(id));
+            return Ok(_serviceApplicationProduct.GetProduct(productStateEnum, id));
         }
 
         // PUT: api/Product/5

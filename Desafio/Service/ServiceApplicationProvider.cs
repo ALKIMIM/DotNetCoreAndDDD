@@ -10,9 +10,9 @@ namespace Application.Service
 {
     public class ServiceApplicationProvider : IServiceApplicationProvider
     {
-        private readonly IProvider _provider;
+        private readonly IProviderService _provider;
 
-        public ServiceApplicationProvider(IProvider provider)
+        public ServiceApplicationProvider(IProviderService provider)
         {
             _provider = provider;
         }
@@ -41,7 +41,7 @@ namespace Application.Service
 
         public IEnumerable<ProviderModel> ListProvider()
         {
-            var list = _provider.GetProvider("");
+            var list = _provider.GetProvider();
             List<ProviderModel> providers = new List<ProviderModel>();
 
             foreach (var item in list)

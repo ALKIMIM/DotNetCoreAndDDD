@@ -51,8 +51,8 @@ namespace Desafio
             services.AddScoped<IServiceApplicationProvider, ServiceApplicationProvider>();
             
             // Domain
-            services.AddScoped<IProduct, ProductService>();
-            services.AddScoped<IProvider, ProviderService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProviderService, ProviderService>();
 
             // Repository
             services.AddScoped<IRepositoryProduct, ProductRepository>();

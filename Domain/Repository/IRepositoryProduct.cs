@@ -1,4 +1,5 @@
 ﻿using Desafio.Domain.Entities;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Domain.Repository
     {
         new IEnumerable<Product> Read();
         new public Product Read(int id);
+        PagerResponse<Product> Read(ProductStateEnum productStateEnum, int totalRows = 10, int pageNumber = 1, string filter = "");
     }
 }

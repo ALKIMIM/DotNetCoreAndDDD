@@ -1,18 +1,21 @@
 ﻿using Application.Model;
 using Application.Service.Interfaces;
 using Desafio.Domain.Entities;
+using Domain.Enums;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Application.Service
 {
     public class ServiceApplicationProduct : IServiceApplicationProduct
     {
-        private readonly IProduct _product;
+        private readonly IProductService _product;
 
-        public ServiceApplicationProduct(IProduct product)
+        public ServiceApplicationProduct(IProductService product)
         {
             _product = product;
         }
@@ -22,83 +25,43 @@ namespace Application.Service
             _product.DeleteProduct(id);
         }
 
-        public ProductModel GetProduct(int id)
+        public ProductModel GetProduct(ProductStateEnum productStateEnum, int id)
         {
-            var product = _product.GetProduct(id);
+            var product = _product.GetProduct(productStateEnum, id);
 
             if (product == null)
                 return new ProductModel();
 
-            ProductModel model = new ProductModel()
-            {
-                Id = product.Id,
-                Description = product.Description,
-                ExpirationDate = product.ExpirationDate,
-                ManufacturingDate = product.ManufacturingDate,
-                ProductState = product.ProductState,
-                Provider = new ProviderModel
-                {
-                    Id = product.Provider.Id,
-                    Description = product.Provider.Description,
-                    CNPJ = product.Provider.CNPJ
-                }
-            };
-
+            var model = new ProductModel(product);
             return model;
         }
 
-        public IEnumerable<ProductModel> ListProduct()
+        public PagerResponse<ProductModel> ListPaginateProducts(ProductStateEnum productStateEnum, int totalRows, int pageNumber, string filter = "")
         {
-            var list = _product.GetProducts("");
-            List<ProductModel> products = new List<ProductModel>();
+            var resultModel = new PagerResponse<ProductModel>();
+            var paginationList = _product.GetPaginateProducts(productStateEnum, totalRows, pageNumber, filter);
+            resultModel.TotalRows = paginationList.TotalRows;
+            resultModel.PageNumber = paginationList.PageNumber;
+            resultModel.Filter = paginationList.Filter;
+            resultModel.Items = paginationList.Items.Select(x => new ProductModel(x)).ToList();
+            return resultModel;
+        }
 
-            foreach (var item in list)
-            {
-                ProductModel productModel = new ProductModel()
-                {
-                    Id = item.Id,
-                    Description = item.Description,
-                    ExpirationDate = item.ExpirationDate,
-                    ManufacturingDate = item.ManufacturingDate,
-                    ProductState = item.ProductState,
-                    Provider = new ProviderModel
-                    {
-                        Id = item.Provider.Id,
-                        Description = item.Provider.Description,
-                        CNPJ = item.Provider.CNPJ
-                    }
-                };
-                products.Add(productModel);
-            }
+        public IEnumerable<ProductModel> ListProduct(ProductStateEnum productStateEnum)
+        {
+            var list = _product.GetProducts(productStateEnum).ToList();
+            List<ProductModel> products = list.Select(x => new ProductModel(x)).ToList();
             return products;
         }
 
         public void PostProduct(ProductModel productModel)
         {
-            Product product = new Product()
-            {
-                Id = productModel.Id,
-                Description = productModel.Description,
-                ExpirationDate = productModel.ExpirationDate,
-                ManufacturingDate = productModel.ManufacturingDate,
-                ProductState = productModel.ProductState,
-                ProviderId = productModel.Provider.Id
-            };
-            _product.CreateProduct(product);
+            _product.CreateProduct(productModel.ExportData());
         }
 
         public void PutProduct(ProductModel productModel)
         {
-            Product product = new Product()
-            {
-                Id = productModel.Id,
-                Description = productModel.Description,
-                ExpirationDate = productModel.ExpirationDate,
-                ManufacturingDate = productModel.ManufacturingDate,
-                ProductState = productModel.ProductState,
-                ProviderId = productModel.Provider.Id
-            };
-            _product.CreateProduct(product);
+            _product.CreateProduct(productModel.ExportData());
         }
     }
 }

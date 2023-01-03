@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class ProviderService : IProvider
+    public class ProviderService : IProviderService
     {
         IRepositoryProvider _repositoryProvider;
         public ProviderService(IRepositoryProvider repositoryProvider)
@@ -27,7 +27,7 @@ namespace Domain.Services
             return _repositoryProvider.Read(id);
         }
 
-        public IEnumerable<Provider> GetProvider(string filter)
+        public IEnumerable<Provider> GetProvider()
         {
             return _repositoryProvider.Read().ToList();
         }
