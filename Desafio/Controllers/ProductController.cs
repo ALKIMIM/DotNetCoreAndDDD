@@ -49,7 +49,7 @@ namespace Desafio.Controllers
 
         // PUT: api/Product/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut]
         public ActionResult PutProduct(ProductModel productModel)
         {
             _serviceApplicationProduct.PutProduct(productModel);

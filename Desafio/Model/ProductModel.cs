@@ -40,7 +40,7 @@ namespace Application.Model
         {
             if (this.ManufacturingDate >= this.ExpirationDate)
             {
-                throw new InvalidOperationException("A data de fabricação não pode ser maior que a data de validade");
+                throw new InvalidOperationException("A data de fabricação não pode ser maior ou igual a data de validade");
             }
 
             Product product = new Product()
